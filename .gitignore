@@ -1,27 +1,54 @@
+# =====================
 # C++ build outputs
+# =====================
 *.o
+*.obj
 *.a
 *.so
+*.dll
 *.exe
 *.out
 *.app
+*.dylib
 
-# CMake build directories
-build/
-CMakeFiles/
-cmake_install.cmake
-CMakeCache.txt
-Makefile
+# =====================
+# CMake build directories and files
+# =====================
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/Makefile
 *.cmake
 
-# Log files
-logs/
+# =====================
+# Logs
+# =====================
+/logs/
 *.log
 
-# IDE
+# =====================
+# IDE / Editor
+# =====================
 .vscode/
 .idea/
+/*.swp
+*.swo
 
-# System
+# =====================
+# OS / System files
+# =====================
 .DS_Store
 Thumbs.db
+*.bak
+*.tmp
+
+# =====================
+# Other temporary files
+# =====================
+*.user
+*.user.* 
+*.moc
+*.qrc
+*.ui
+*.autosave
