@@ -1,0 +1,97 @@
+2025-10-27 17:06:23 INFO /home/yan/AgentDemo/src/api_client.cpp:21 ApiClient initialized with API key, length: 35
+2025-10-27 17:06:23 INFO /home/yan/AgentDemo/src/agent.cpp:9 Agent initialized with max history: 10
+2025-10-27 17:06:23 INFO /home/yan/AgentDemo/src/main.cpp:50 API 密钥已设置，长度: 35
+2025-10-27 17:06:23 INFO /home/yan/AgentDemo/src/main.cpp:52 进入交互模式
+2025-10-27 17:06:26 INFO /home/yan/AgentDemo/src/main.cpp:61 用户退出交互模式
+2025-10-27 17:06:26 INFO /home/yan/AgentDemo/src/main.cpp:73 正常退出
+2025-10-27 17:08:56 INFO /home/yan/AgentDemo/src/api_client.cpp:21 ApiClient initialized with API key, length: 35
+2025-10-27 17:08:56 INFO /home/yan/AgentDemo/src/agent.cpp:9 Agent initialized with max history: 10
+2025-10-27 17:08:56 INFO /home/yan/AgentDemo/src/main.cpp:50 API 密钥已设置，长度: 35
+2025-10-27 17:08:56 INFO /home/yan/AgentDemo/src/main.cpp:52 进入交互模式
+2025-10-27 17:09:11 INFO /home/yan/AgentDemo/src/main.cpp:67 用户输入: 写一个简单的cpp二分排序
+2025-10-27 17:09:11 INFO /home/yan/AgentDemo/src/agent.cpp:20 Processing user message, length: 33
+2025-10-27 17:09:11 INFO /home/yan/AgentDemo/src/api_client.cpp:69 Sending API request, context length: 40
+2025-10-27 17:09:31 INFO /home/yan/AgentDemo/src/api_client.cpp:124 API request successful, response length: 2389
+2025-10-27 17:09:31 INFO /home/yan/AgentDemo/src/api_client.cpp:133 API response parsed successfully, content length: 1127
+2025-10-27 17:09:31 INFO /home/yan/AgentDemo/src/agent.cpp:33 Received API response, length: 1127
+2025-10-27 17:09:31 INFO /home/yan/AgentDemo/src/agent.cpp:39 Message processing completed
+2025-10-27 17:09:31 INFO /home/yan/AgentDemo/src/main.cpp:70 AI 响应完成，长度: 1127
+2025-10-27 17:09:42 INFO /home/yan/AgentDemo/src/main.cpp:61 用户退出交互模式
+2025-10-27 17:09:42 INFO /home/yan/AgentDemo/src/main.cpp:73 正常退出
+2025-10-27 17:12:46 INFO /home/yan/AgentDemo/src/api_client.cpp:21 ApiClient initialized with API key, length: 35
+2025-10-27 17:12:46 INFO /home/yan/AgentDemo/src/agent.cpp:9 Agent initialized with max history: 10
+2025-10-27 17:12:46 INFO /home/yan/AgentDemo/src/main.cpp:50 API 密钥已设置，长度: 35
+2025-10-27 17:12:46 INFO /home/yan/AgentDemo/src/main.cpp:52 进入交互模式
+2025-10-27 17:12:51 INFO /home/yan/AgentDemo/src/main.cpp:67 用户输入: 你好
+2025-10-27 17:12:51 INFO /home/yan/AgentDemo/src/agent.cpp:20 Processing user message, length: 6
+2025-10-27 17:12:51 INFO /home/yan/AgentDemo/src/api_client.cpp:70 Sending API request, context length: 13
+2025-10-27 17:12:54 INFO /home/yan/AgentDemo/src/api_client.cpp:125 API request successful, response length: 762
+2025-10-27 17:12:54 INFO /home/yan/AgentDemo/src/api_client.cpp:134 API response parsed successfully, content length: 306
+2025-10-27 17:12:54 INFO /home/yan/AgentDemo/src/agent.cpp:33 Received API response, length: 306
+2025-10-27 17:12:54 INFO /home/yan/AgentDemo/src/agent.cpp:39 Message processing completed
+2025-10-27 17:12:54 INFO /home/yan/AgentDemo/src/main.cpp:70 AI 响应完成，长度: 306
+2025-10-27 17:13:35 INFO /home/yan/AgentDemo/src/main.cpp:61 用户退出交互模式
+2025-10-27 17:13:35 INFO /home/yan/AgentDemo/src/main.cpp:73 正常退出
+2025-10-27 18:32:18 INFO /home/yan/AgentDemo/src/api_client.cpp:22 ApiClient initialized with API key, length: 35
+2025-10-27 18:32:18 INFO /home/yan/AgentDemo/src/agent.cpp:9 Agent initialized with max history: 10
+2025-10-27 18:32:18 INFO /home/yan/AgentDemo/src/main.cpp:52 API 密钥已设置，长度: 35
+2025-10-27 18:32:18 INFO /home/yan/AgentDemo/src/main.cpp:54 进入交互模式
+2025-10-27 18:32:25 INFO /home/yan/AgentDemo/src/main.cpp:73 用户退出交互模式
+2025-10-27 18:32:25 INFO /home/yan/AgentDemo/src/main.cpp:83 正常退出
+2025-10-27 18:34:52 INFO /home/yan/AgentDemo/src/api_client.cpp:22 ApiClient initialized with API key, length: 35
+2025-10-27 18:34:52 INFO /home/yan/AgentDemo/src/agent.cpp:9 Agent initialized with max history: 10
+2025-10-27 18:34:52 INFO /home/yan/AgentDemo/src/main.cpp:52 API 密钥已设置，长度: 35
+2025-10-27 18:34:52 INFO /home/yan/AgentDemo/src/main.cpp:54 进入交互模式
+2025-10-27 18:45:23 INFO /home/yan/AgentDemo/src/api_client.cpp:26 ApiClient initialized with API key, length: 35
+2025-10-27 18:45:23 INFO /home/yan/AgentDemo/src/agent.cpp:9 Agent initialized with max history: 10
+2025-10-27 18:45:23 INFO /home/yan/AgentDemo/src/main.cpp:52 API 密钥已设置，长度: 35
+2025-10-27 18:45:23 INFO /home/yan/AgentDemo/src/main.cpp:54 进入交互模式
+2025-10-27 18:45:28 INFO /home/yan/AgentDemo/src/main.cpp:72 用户退出交互模式
+2025-10-27 18:45:28 INFO /home/yan/AgentDemo/src/main.cpp:82 正常退出
+2025-10-27 18:58:31 INFO /home/yan/AgentDemo/src/api_client.cpp:86 ApiClient initialized with API key, length: 35
+2025-10-27 18:58:31 INFO /home/yan/AgentDemo/src/agent.cpp:9 Agent initialized with max history: 10
+2025-10-27 18:58:31 INFO /home/yan/AgentDemo/src/main.cpp:52 API 密钥已设置, 长度: 35
+2025-10-27 18:58:31 INFO /home/yan/AgentDemo/src/main.cpp:54 进入交互模式
+2025-10-27 18:58:37 INFO /home/yan/AgentDemo/src/main.cpp:75 用户输入: 😁
+2025-10-27 18:58:37 INFO /home/yan/AgentDemo/src/agent.cpp:20 Processing user message, length: 4
+2025-10-27 18:58:37 INFO /home/yan/AgentDemo/src/api_client.cpp:112 Sending API request, context length: 11
+2025-10-27 18:58:40 INFO /home/yan/AgentDemo/src/agent.cpp:33 Received API response, length: 0
+2025-10-27 18:58:40 INFO /home/yan/AgentDemo/src/agent.cpp:39 Message processing completed
+2025-10-27 18:58:40 INFO /home/yan/AgentDemo/src/main.cpp:79 AI 响应完成, 长度: 0
+2025-10-27 18:58:58 INFO /home/yan/AgentDemo/src/api_client.cpp:86 ApiClient initialized with API key, length: 35
+2025-10-27 18:58:58 INFO /home/yan/AgentDemo/src/agent.cpp:9 Agent initialized with max history: 10
+2025-10-27 18:58:58 INFO /home/yan/AgentDemo/src/main.cpp:52 API 密钥已设置, 长度: 35
+2025-10-27 18:58:58 INFO /home/yan/AgentDemo/src/main.cpp:54 进入交互模式
+2025-10-27 18:59:04 INFO /home/yan/AgentDemo/src/main.cpp:75 用户输入: 你好
+2025-10-27 18:59:04 INFO /home/yan/AgentDemo/src/agent.cpp:20 Processing user message, length: 6
+2025-10-27 18:59:04 INFO /home/yan/AgentDemo/src/api_client.cpp:112 Sending API request, context length: 13
+2025-10-27 18:59:07 INFO /home/yan/AgentDemo/src/agent.cpp:33 Received API response, length: 0
+2025-10-27 18:59:07 INFO /home/yan/AgentDemo/src/agent.cpp:39 Message processing completed
+2025-10-27 18:59:07 INFO /home/yan/AgentDemo/src/main.cpp:79 AI 响应完成, 长度: 0
+2025-10-27 18:59:27 INFO /home/yan/AgentDemo/src/api_client.cpp:86 ApiClient initialized with API key, length: 35
+2025-10-27 18:59:27 INFO /home/yan/AgentDemo/src/agent.cpp:9 Agent initialized with max history: 10
+2025-10-27 18:59:27 INFO /home/yan/AgentDemo/src/main.cpp:52 API 密钥已设置, 长度: 35
+2025-10-27 18:59:27 INFO /home/yan/AgentDemo/src/main.cpp:54 进入交互模式
+2025-10-27 18:59:29 INFO /home/yan/AgentDemo/src/main.cpp:75 用户输入: nihao
+2025-10-27 18:59:29 INFO /home/yan/AgentDemo/src/agent.cpp:20 Processing user message, length: 5
+2025-10-27 18:59:29 INFO /home/yan/AgentDemo/src/api_client.cpp:112 Sending API request, context length: 12
+2025-10-27 18:59:32 INFO /home/yan/AgentDemo/src/agent.cpp:33 Received API response, length: 0
+2025-10-27 18:59:32 INFO /home/yan/AgentDemo/src/agent.cpp:39 Message processing completed
+2025-10-27 18:59:32 INFO /home/yan/AgentDemo/src/main.cpp:79 AI 响应完成, 长度: 0
+2025-10-27 18:59:35 INFO /home/yan/AgentDemo/src/main.cpp:71 用户退出交互模式
+2025-10-27 18:59:35 INFO /home/yan/AgentDemo/src/main.cpp:82 正常退出
+2025-10-27 19:24:25 INFO /home/yan/AgentDemo/src/agent.cpp:7 Agent initialized with max history: 10
+2025-10-27 19:24:25 INFO /home/yan/AgentDemo/src/main.cpp:61 API 密钥已设置, 长度: 35
+2025-10-27 19:24:25 INFO /home/yan/AgentDemo/src/main.cpp:63 进入交互模式
+2025-10-27 19:24:32 INFO /home/yan/AgentDemo/src/main.cpp:95 正常退出
+2025-10-27 19:26:32 INFO /home/yan/AgentDemo/src/agent.cpp:7 Agent initialized with max history: 10
+2025-10-27 19:26:32 INFO /home/yan/AgentDemo/src/main.cpp:61 API 密钥已设置, 长度: 35
+2025-10-27 19:26:32 INFO /home/yan/AgentDemo/src/main.cpp:63 进入交互模式
+2025-10-27 19:26:38 INFO /home/yan/AgentDemo/src/main.cpp:94 正常退出
+2025-10-27 19:28:07 INFO /home/yan/AgentDemo/src/agent.cpp:7 Agent initialized with max history: 10
+2025-10-27 19:28:07 INFO /home/yan/AgentDemo/src/main.cpp:61 API 密钥已设置, 长度: 35
+2025-10-27 19:28:07 INFO /home/yan/AgentDemo/src/main.cpp:63 进入交互模式
+2025-10-27 19:47:14 INFO /home/yan/AgentDemo/src/agent.cpp:7 Agent initialized with max history: 10
+2025-10-27 19:47:14 INFO /home/yan/AgentDemo/src/main.cpp:64 API 密钥已设置, 长度: 35
+2025-10-27 19:47:14 INFO /home/yan/AgentDemo/src/main.cpp:67 进入交互模式
+2025-10-27 19:49:15 INFO /home/yan/AgentDemo/src/main.cpp:97 正常退出
