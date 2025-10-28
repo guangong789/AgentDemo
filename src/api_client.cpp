@@ -67,11 +67,8 @@ static size_t write_callback(void* contents, size_t size, size_t nmemb, void* us
 
 ApiClient::ApiClient() {
     m_base_url = "https://api.deepseek.com/v1";
-    const char* env_key = getenv("DEEPSEEK_API_KEY");
-    if (env_key) m_api_key = env_key;
+    m_api_key = load_api_key();
 }
-
-ApiClient::~ApiClient() {}
 
 void ApiClient::set_api_key(const string& api_key) {
     m_api_key = api_key;
@@ -139,4 +136,41 @@ string ApiClient::unescape_json_string(const string& str) {
             result += str[i];
     }
     return result;
+}
+
+std::string ApiClient::get_home_dir() {
+    const char* home = getenv("HOME");
+    if (home) return std::string(home);
+    struct passwd* pw = getpwuid(getuid());
+    return pw ? std::string(pw->pw_dir) : ".";
+}
+
+std::string ApiClient::load_api_key() {
+    // 环境变量
+    if (const char* env_key = getenv("DEEPSEEK_API_KEY")) {
+        return std::string(env_key);
+    }
+    // 配置文件
+    std::string config_path = get_home_dir() + "/.deepseek_config";
+    std::ifstream fin(config_path);
+    if (fin) {
+        std::string key;
+        std::getline(fin, key);
+        if (!key.empty()) return key;
+    }
+    // 用户输入
+    std::string key;
+    std::cout << "🔑 请输入 DEEPSEEK_API_KEY(留空模拟模式): ";
+    std::getline(std::cin, key);
+    if (!key.empty()) {
+        std::cout << "是否保存到本地配置文件 (" << config_path << ")? [y/N]: ";
+        std::string ans;
+        std::getline(std::cin, ans);
+        if (ans == "y" || ans == "Y") {
+            std::ofstream fout(config_path);
+            fout << key;
+            std::cout << "✅ 已保存 API Key.\n";
+        }
+    }
+    return key;
 }

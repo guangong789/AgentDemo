@@ -1,60 +1,24 @@
 #include "agent.h"
 #include <iostream>
-#include <cstdlib>
+#include <csignal>
+#include <atomic>
 #include <readline/readline.h>
 #include <readline/history.h>
-#include <atomic>
-#include <csignal>
 
 using namespace std;
 atomic<bool> stop_stream{false};
 
-void show_help() {
-    cout << "使用方法:" << endl;
-    cout << "  ag <消息>    # 单次查询" << endl;
-    cout << "  ag           # 交互模式" << endl;
-    cout << endl;
-    cout << "配置 API 密钥:" << endl;
-    cout << "  临时设置: export DEEPSEEK_API_KEY=\"密钥\"" << endl;
-    cout << "  永久设置: echo 'export DEEPSEEK_API_KEY=\"密钥\"' >> ~/.bashrc 或 ~/.zshrc" << endl;
-}
+void handle_sigint(int) { stop_stream = true; }
 
-void handle_sigint(int) {
-    stop_stream = true;
-}
-
-int main(int argc, char* argv[]) {
-    std::signal(SIGINT, handle_sigint);
-
-    if (argc == 2 && (string(argv[1]) == "--help" || string(argv[1]) == "-h")) {
-        show_help();
-        return 0;
-    }
-
-    if (argc > 1) {
-        string query;
-        for (int i = 1; i < argc; i++) {
-            if (i > 1) query += " ";
-            query += argv[i];
-        }
-        Agent agent(5);
-        string response = agent.send_msg(query);
-        cout << response << endl;
-        return 0;
-    }
+int main() {
+    signal(SIGINT, handle_sigint);
 
     Agent agent(10);
-    const char* api_key = getenv("DEEPSEEK_API_KEY");
-    if (!api_key) {
-        cout << "⚠️ 未设置 DEEPSEEK_API_KEY, 使用模拟模式" << endl;
-        cout << "💡 运行 ag --help 查看设置方法" << endl;
-    }
-
     cout << "🤖 DeepSeek Chat, 有什么可以帮你?💬" << endl;
 
     while (true) {
         char* input_cstr = readline("👤 User: ");
-        if (!input_cstr) {
+        if (!input_cstr) {  // ctrl+D 或 EOF
             cout << endl;
             break;
         }
@@ -75,6 +39,5 @@ int main(int argc, char* argv[]) {
         });
         cout << endl;
     }
-
     return 0;
 }
