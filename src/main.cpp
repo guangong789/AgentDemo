@@ -8,7 +8,9 @@
 using namespace std;
 atomic<bool> stop_stream{false};
 
-void handle_sigint(int) { stop_stream = true; }
+void handle_sigint(int) {
+    stop_stream = true;
+}
 
 int main() {
     signal(SIGINT, handle_sigint);
