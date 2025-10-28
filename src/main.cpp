@@ -14,7 +14,7 @@ int main() {
     signal(SIGINT, handle_sigint);
 
     Agent agent(10);
-    cout << "🤖 DeepSeek Chat, 有什么可以帮你?💬" << endl;
+    cout << "🤖 DeepSeek Chat, 有什么可以帮你? 💬" << endl;
 
     while (true) {
         char* input_cstr = readline("👤 User: ");

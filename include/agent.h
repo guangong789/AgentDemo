@@ -9,7 +9,7 @@ public:
     using StreamCallback = std::function<void(const std::string&)>;
 
     Agent(size_t max_history = 10);
-    std::string send_msg(const std::string& input, StreamCallback callback = nullptr);  // 流式输出
+    std::string send_msg(const std::string& input, StreamCallback callback = nullptr);
 
 private:
     void check_limit();

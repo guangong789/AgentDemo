@@ -10,22 +10,22 @@ extern std::atomic<bool> stop_stream;
 using json = nlohmann::json;
 using namespace std;
 
-static bool extract_and_print_delta(string& buf, ApiClient::StreamCallback callback) {
+static bool extract_and_print_delta(string& buf, ApiClient::StreamCallback callback) { // 提取json字段
     const string key = "\"delta\":{\"content\":\"";
     size_t pos = buf.find(key);
     if (pos == string::npos) return false;
     pos += key.size();
 
     string raw;
-    bool escape = false;
+    bool escape = false; // 转义状态标志
     for (size_t i = pos; i < buf.size(); ++i) {
         char c = buf[i];
-        if (escape) {
+        if (escape) { // 前一个字符是转义符
             raw.push_back(c);
             escape = false;
         } else if (c == '\\') {
             escape = true;
-        } else if (c == '"') {
+        } else if (c == '"') { // 内容结束
             string sub = buf.substr(pos, i - pos);
             string unescaped = ApiClient::unescape_json_string(sub);
             if (callback)
@@ -43,24 +43,24 @@ static bool extract_and_print_delta(string& buf, ApiClient::StreamCallback callb
 }
 
 static size_t write_callback(void* contents, size_t size, size_t nmemb, void* userp) {
+    // 收到的数据指针, 数据块的大小, 数据块数量
     if (stop_stream.load()) {
         return 0;
     }
-
     size_t total_size = size * nmemb;
-    string chunk((char*)contents, total_size);
-
+    string chunk((char*)contents, total_size); // 收到的字符串
+    // 回调数据结构
     struct CallbackData {
         string* response;
         ApiClient::StreamCallback callback;
-        string buffer;
+        string buffer; // 流式处理缓冲区
     };
 
     CallbackData* data = static_cast<CallbackData*>(userp);
-    data->response->append(chunk);
-    data->buffer += chunk;
+    data->response->append(chunk); // 保留完整相应
+    data->buffer += chunk; // 用于流式处理
 
-    while (!stop_stream.load() && extract_and_print_delta(data->buffer, data->callback)) {}
+    while (!stop_stream.load() && extract_and_print_delta(data->buffer, data->callback)) {} // 不断从buffer中提取完整的数据块
 
     return total_size;
 }
@@ -83,7 +83,7 @@ string ApiClient::send_request(const string& context, StreamCallback callback) {
     json jreq = {
         {"model", "deepseek-chat"},
         {"messages", {{{"role", "user"}, {"content", context}}}},
-        {"max_tokens", 800},
+        {"max_tokens", 1000},
         {"temperature", 0.7},
         {"stream", true}};
     string request_body = jreq.dump();
@@ -105,12 +105,12 @@ string ApiClient::send_request(const string& context, StreamCallback callback) {
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, &data);
     curl_easy_setopt(curl, CURLOPT_TIMEOUT, 120L);
 
-    struct curl_slist* headers = nullptr;
+    struct curl_slist* headers = nullptr; // 设置http头部
     headers = curl_slist_append(headers, "Content-Type: application/json");
     headers = curl_slist_append(headers, ("Authorization: Bearer " + m_api_key).c_str());
     curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
 
-    CURLcode res = curl_easy_perform(curl);
+    CURLcode res = curl_easy_perform(curl); // 执行请求
     curl_slist_free_all(headers);
     curl_easy_cleanup(curl);
 
@@ -118,7 +118,7 @@ string ApiClient::send_request(const string& context, StreamCallback callback) {
     return response_string;
 }
 
-string ApiClient::unescape_json_string(const string& str) {
+string ApiClient::unescape_json_string(const string& str) { // 将转义字符转化为普通c++字符
     string result;
     for (size_t i = 0; i < str.length(); ++i) {
         if (str[i] == '\\' && i + 1 < str.length()) {
@@ -132,8 +132,9 @@ string ApiClient::unescape_json_string(const string& str) {
             default: result += next; break;
             }
             i++;
-        } else
+        } else {
             result += str[i];
+        }
     }
     return result;
 }
