@@ -1,5 +1,4 @@
 #include "api_client.h"
-#include "logger.h"
 #include <iostream>
 #include <sstream>
 #include <curl/curl.h>
@@ -69,10 +68,7 @@ static size_t write_callback(void* contents, size_t size, size_t nmemb, void* us
 ApiClient::ApiClient() {
     m_base_url = "https://api.deepseek.com/v1";
     const char* env_key = getenv("DEEPSEEK_API_KEY");
-    if (env_key)
-        m_api_key = env_key;
-    else
-        log_warn("ApiClient initialized without API key, using mock mode");
+    if (env_key) m_api_key = env_key;
 }
 
 ApiClient::~ApiClient() {}

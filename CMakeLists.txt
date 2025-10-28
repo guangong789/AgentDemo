@@ -14,7 +14,6 @@ add_executable(ag
     src/main.cpp
     src/agent.cpp
     src/api_client.cpp
-    src/logger.cpp
 )
 
 # 链接所有依赖库

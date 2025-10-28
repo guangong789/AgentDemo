@@ -1,5 +1,4 @@
 #include "agent.h"
-#include "logger_init.h"
 #include <iostream>
 #include <cstdlib>
 #include <readline/readline.h>
@@ -27,11 +26,6 @@ void handle_sigint(int) {
 int main(int argc, char* argv[]) {
     std::signal(SIGINT, handle_sigint);
 
-    LoggerInitializer::create("logs/agent.log")
-        .set_console(false)
-        .set_level(Logger::INFO)
-        .set_max_size(10 * 1024);
-
     if (argc == 2 && (string(argv[1]) == "--help" || string(argv[1]) == "-h")) {
         show_help();
         return 0;
@@ -43,25 +37,19 @@ int main(int argc, char* argv[]) {
             if (i > 1) query += " ";
             query += argv[i];
         }
-        log_info("单次查询模式, 问题: %s", query.c_str());
         Agent agent(5);
         string response = agent.send_msg(query);
         cout << response << endl;
-        log_info("单次查询完成, 响应长度: %zu", response.length());
         return 0;
     }
 
     Agent agent(10);
     const char* api_key = getenv("DEEPSEEK_API_KEY");
     if (!api_key) {
-        log_warn("未设置 DEEPSEEK_API_KEY, 使用模拟模式");
-        cout << "⚠️ 未设置 DEEPSEEK_API_KEY，使用模拟模式" << endl;
+        cout << "⚠️ 未设置 DEEPSEEK_API_KEY, 使用模拟模式" << endl;
         cout << "💡 运行 ag --help 查看设置方法" << endl;
-    } else {
-        log_info("API 密钥已设置, 长度: %zu", strlen(api_key));
     }
 
-    log_info("进入交互模式");
     cout << "🤖 DeepSeek Chat, 有什么可以帮你?💬" << endl;
 
     while (true) {
@@ -88,6 +76,5 @@ int main(int argc, char* argv[]) {
         cout << endl;
     }
 
-    log_info("正常退出");
     return 0;
 }
