@@ -1,0 +1,14 @@
+{
+    cmdlines = {
+        "xmake ",
+        "xmake run ag",
+        "xmake l /home/yan/.vscode-server/extensions/tboox.xmake-vscode-2.4.1/assets/explorer.lua",
+        "xmake l /home/yan/.vscode-server/extensions/tboox.xmake-vscode-2.4.1/assets/explorer.lua",
+        "xmake check",
+        "xmake ",
+        "xmake run ag",
+        "xmake ",
+        "xmake run ag",
+        "xmake check"
+    }
+}

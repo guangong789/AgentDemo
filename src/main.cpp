@@ -15,7 +15,7 @@ void handle_sigint(int) {
 int main() {
     signal(SIGINT, handle_sigint);
 
-    Agent agent(10);
+    Agent agent;
     cout << "🤖 DeepSeek Chat, 有什么可以帮你? 💬" << endl;
 
     while (true) {
