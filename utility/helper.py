@@ -11,9 +11,12 @@ class APIHelper:
         })
     
     def send_chat_request(self, messages):
+        system_message = {"role": "system", "content": "请用中文回答所有问题,除非用户明确指定语言"}
+        all_messages = [system_message] + messages
+        
         payload = {
             "model": "deepseek-chat",
-            "messages": messages,
+            "messages": all_messages,  # 使用包含system消息的列表
             "temperature": 0.7,
             "max_tokens": 4096,
             "stream": True
